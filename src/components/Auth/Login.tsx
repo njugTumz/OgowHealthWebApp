@@ -59,6 +59,18 @@ const SubmitButton = styled.button`
   }
 `;
 
+const RegisterLink = styled.a`
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
+  display: inline-block;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -70,8 +82,7 @@ const Login: React.FC = () => {
     try {
       await login({ email, password });
       // Save token and redirect if needed
-      navigate('/'); // Redirect to the home or default page
-      navigate('/health-facilities');
+      navigate('/health-facilities'); // Redirect to the health facilities page
     } catch (error) {
       console.error('Login failed:', error);
     }
@@ -102,6 +113,7 @@ const Login: React.FC = () => {
           />
         </FormField>
         <SubmitButton type="submit">Login</SubmitButton>
+        <RegisterLink href="/register">Don't have an account? Register here</RegisterLink>
       </form>
     </FormWrapper>
   );

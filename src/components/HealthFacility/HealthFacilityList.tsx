@@ -61,7 +61,7 @@ const ActionButton = styled.button`
 
 const HealthFacilityList: React.FC = () => {
   const [healthFacilities, setHealthFacilities] = useState<HealthFacility[]>([]);
-
+ 
   useEffect(() => {
     const fetchHealthFacilities = async () => {
       try {
@@ -74,6 +74,8 @@ const HealthFacilityList: React.FC = () => {
 
     fetchHealthFacilities();
   }, []);
+
+
 
   return (
     <ListWrapper>
@@ -91,8 +93,8 @@ const HealthFacilityList: React.FC = () => {
         </thead>
         <tbody>
           {healthFacilities.map((facility) => (
-            <TableRow key={facility?.id}>
-              <TableCell>{facility.name}</TableCell>
+            <TableRow key={facility.id}>
+              <TableCell>{facility?.name}</TableCell>
               <TableCell>{facility?.district}</TableCell>
               <TableCell>{facility?.region}</TableCell>
               <TableCell>{facility?.state}</TableCell>
