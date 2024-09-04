@@ -13,20 +13,36 @@ interface HealthFacilityFormProps {
 const FormWrapper = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px; /* Adjusted padding */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   max-width: 600px;
-  margin-bottom: 40px; /* Added spacing between the form and the list */
+  width: 100%;
+  margin-bottom: 40px; /* Spacing between the form and the list */
+  max-height: 300px; /* Fixed max-height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  
+  @media (max-width: 768px) {
+    padding: 15px; /* Adjusted padding for small screens */
+    max-height: 500px; /* Adjusted max-height for small screens */
+  }
 `;
 
 const FormTitle = styled.h2`
   margin-bottom: 20px;
   color: #333;
   font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 `;
 
 const FormField = styled.div`
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Label = styled.label`
