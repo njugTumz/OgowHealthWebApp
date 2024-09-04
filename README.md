@@ -13,7 +13,7 @@ https://nice-grass-090a47503.5.azurestaticapps.net/login
 -Its Hosted on Azure using Azure Static Web Apps
 # Use Credentials to Log in
  "Email":"testuser@gmail.com",
-  "Password":"12Buns34*"
+ "Password":"12Buns34*"
 
 ## Running the App
 

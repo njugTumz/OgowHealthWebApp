@@ -1,7 +1,7 @@
 // src/services/api.ts
 import axios from 'axios';
 
-const API_URL = 'https://healthmanagementapi.azurewebsites.net/api'; // Replace with your API URL
+const API_URL = 'https://ogohealthapi.azurewebsites.net/api'; // Replace with your API URL
 
 export const api = axios.create({
   baseURL: API_URL,
