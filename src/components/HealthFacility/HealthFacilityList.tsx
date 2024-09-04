@@ -65,7 +65,7 @@ const HealthFacilityList: React.FC = () => {
   useEffect(() => {
     const fetchHealthFacilities = async () => {
       try {
-        const response = await api.get('/health-facilities');
+        const response = await api.get('/HealthFacility');
         setHealthFacilities(response.data);
       } catch (error) {
         console.error('Error fetching health facilities:', error);
@@ -91,12 +91,12 @@ const HealthFacilityList: React.FC = () => {
         </thead>
         <tbody>
           {healthFacilities.map((facility) => (
-            <TableRow key={facility.id}>
+            <TableRow key={facility?.id}>
               <TableCell>{facility.name}</TableCell>
-              <TableCell>{facility.district}</TableCell>
-              <TableCell>{facility.region}</TableCell>
-              <TableCell>{facility.state}</TableCell>
-              <TableCell>{facility.country}</TableCell>
+              <TableCell>{facility?.district}</TableCell>
+              <TableCell>{facility?.region}</TableCell>
+              <TableCell>{facility?.state}</TableCell>
+              <TableCell>{facility?.country}</TableCell>
               <TableCell>
                 <ActionButton>Edit</ActionButton>
                 <ActionButton>Delete</ActionButton>
