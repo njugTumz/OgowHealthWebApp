@@ -68,7 +68,6 @@ const SubmitButton = styled.button`
 
 const HealthFacilityForm: React.FC<HealthFacilityFormProps> = ({ healthFacility, onSuccess }) => {
   const [formData, setFormData] = useState<HealthFacility>({
-    id: healthFacility?.id || '',
     name: healthFacility?.name || '',
     district: healthFacility?.district || '',
     region: healthFacility?.region || '',
@@ -87,9 +86,9 @@ const HealthFacilityForm: React.FC<HealthFacilityFormProps> = ({ healthFacility,
     e.preventDefault();
     try {
       if (formData.id) {
-        await api.put(`/health-facilities/${formData.id}`, formData);
+        await api.put(`/HealthFacility/${formData.id}`, formData);
       } else {
-        await api.post('/health-facilities', formData);
+        await api.post('/HealthFacility', formData);
       }
 
       if (onSuccess) {

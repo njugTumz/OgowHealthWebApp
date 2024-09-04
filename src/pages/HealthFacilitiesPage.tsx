@@ -1,6 +1,6 @@
 // src/pages/HealthFacilitiesPage.tsx
 
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import HealthFacilityList from '../components/HealthFacility/HealthFacilityList';
 import HealthFacilityForm from '../components/HealthFacility/HealthFacilityForm';
@@ -25,11 +25,17 @@ const PageTitle = styled.h1`
 `;
 
 const HealthFacilitiesPage: React.FC = () => {
+  const [refresh, setRefresh] = useState(false);
+
+  const handleFormSuccess = () => {
+    setRefresh(prev => !prev); // Toggle the refresh state
+  };
+
   return (
     <PageWrapper>
       <PageTitle>Health Facilities</PageTitle>
-      <HealthFacilityForm />
-      <HealthFacilityList />
+      <HealthFacilityForm onSuccess={handleFormSuccess} />
+      <HealthFacilityList refresh={refresh} />
     </PageWrapper>
   );
 };

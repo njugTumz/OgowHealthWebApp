@@ -59,9 +59,13 @@ const ActionButton = styled.button`
   }
 `;
 
-const HealthFacilityList: React.FC = () => {
+interface HealthFacilityListProps {
+  refresh?: boolean;
+}
+
+const HealthFacilityList: React.FC<HealthFacilityListProps> = ({ refresh }) => {
   const [healthFacilities, setHealthFacilities] = useState<HealthFacility[]>([]);
- 
+  
   useEffect(() => {
     const fetchHealthFacilities = async () => {
       try {
@@ -73,9 +77,7 @@ const HealthFacilityList: React.FC = () => {
     };
 
     fetchHealthFacilities();
-  }, []);
-
-
+  }, [refresh]); // Depend on `refresh` to reload data
 
   return (
     <ListWrapper>
